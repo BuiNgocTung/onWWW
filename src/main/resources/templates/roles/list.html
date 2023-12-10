@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Candidates by Role</title>
+</head>
+<body>
+<form th:action="@{/getCandidatesByExperienceRole}">
+<!--    return ve RequestParam-->
+    <select name="role">
+        <option th:each="role : ${roleList}" th:value="${role}" th:text="${role}"></option>
+    </select>
+    <button type="submit">View</button>
+
+</form>
+</body>
+</html>

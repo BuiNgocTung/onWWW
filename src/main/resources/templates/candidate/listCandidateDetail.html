@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <H1>List candidate_detail</H1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </tr>
+        <tr>
+
+            <td th:text="${candidateDetail.id}"></td>
+            <td th:text="${candidateDetail.fullName}"></td>
+            <td th:text="${candidateDetail.email}"></td>
+            <td th:text="${candidateDetail.phone}"></td>
+        </tr>
+    </table>
+</body>
+</html>
