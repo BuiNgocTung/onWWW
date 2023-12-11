@@ -6,7 +6,7 @@
 </head>
 <body>
 <form th:action="@{/getCandidatesByExperienceRole}">
-<!--    return ve RequestParam-->
+<!--    return ve @RequestParam("role") trong controller-->
     <select name="role">
         <option th:each="role : ${roleList}" th:value="${role}" th:text="${role}"></option>
     </select>

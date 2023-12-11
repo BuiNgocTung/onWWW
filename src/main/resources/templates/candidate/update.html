@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <h1>Update Candidate</h1>
+        <form th:action="@{/cadidate/update/{id}(id=${canUpp.id})}" th:object ="${canUpp}" method="post">
+            <label> id:</label>
+            <input th:field="*{id}" disabled><br>
+
+            <label> FullName:</label>
+            <input th:field="*{fullName}"><br>
+
+            <label> Emaill:</label>
+            <input th:field="*{email}"><br>
+
+            <label> phone:</label>
+            <input th:field="*{phone}"> <br>
+            <button type="submit" >Update </button>
+
+        </form>
+</body>
+</html>

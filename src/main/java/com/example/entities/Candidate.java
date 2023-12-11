@@ -9,6 +9,8 @@ import java.util.List;
 
 public class Candidate {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     @Column(name = "can_id")
     private  long id;
     @Column( columnDefinition = "varchar(15)")
@@ -27,7 +29,7 @@ public class Candidate {
         this.id = id;
     }
 
-    public Candidate(long id, String phone, String email, String fullName, List<Experience> experiences) {
+    public Candidate(String phone, String email, String fullName, List<Experience> experiences) {
         this.id = id;
         this.phone = phone;
         this.email = email;

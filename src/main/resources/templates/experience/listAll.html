@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <h1>
+            List Experiences
+        </h1>
+        <button>  <a href="/experiences/showformAdd"> add</a></button>
+
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>companny</th>
+                <th>from_date</th>
+                <th>toDate</th>
+                <th>role</th>
+                <th>workDescripton</th>
+                <th>can_id</th>
+                <th>action</th>
+                <th>action</th>
+            </tr >
+            <tr th:each=" ex :${exPage}">
+                <td th:text="${ex.id}"></td>
+                <td th:text="${ex.compannyName}"></td>
+                <td th:text="${ex.fromDate}"></td>
+                <td th:text="${ex.toDate}"></td>
+                <td th:text="${ex.workDescripton}"></td>
+                <td th:text="${ex.role}"></td>
+                <td th:text="${ex.candidate.id}"></td>
+                <td> <a th:href="@{/experiences/delete/{id} (id=${ex.id})}"> delete</a> </td>
+                <td> <a th:href="@{/experiences/showformUpdate/{id} (id=${ex.id})}"> Update</a></td>
+
+            </tr>
+        </table>
+</body>
+</html>

@@ -11,6 +11,7 @@ import java.util.List;
 
 @Repository
 public interface CandidateRepository extends JpaRepository<Candidate,Long> {
+
     List<Candidate> findByEmailNotNull();
     @Query("SELECT distinct e.candidate FROM Experience e WHERE e.role = ?1")
     List<Candidate> findCandidatesByExperienceRole(Roles role);

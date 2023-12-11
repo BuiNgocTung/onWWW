@@ -1,5 +1,6 @@
 package com.example.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -8,12 +9,15 @@ import java.time.LocalDate;
 @Table(name = "experience")
 public class Experience {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "exp_id")
     private long id;
     @Column
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate fromDate;
 
     @Column( columnDefinition = "varchar(400)")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private String workDescripton;
     @Column
 
@@ -27,8 +31,8 @@ public class Experience {
     @JoinColumn(name = "can_id")
     private Candidate candidate;
 
-    public Experience(long id, LocalDate fromDate, String workDescripton, Roles role, String compannyName, LocalDate toDate, Candidate candidate) {
-        this.id = id;
+    public Experience( LocalDate fromDate, String workDescripton, Roles role, String compannyName, LocalDate toDate, Candidate candidate) {
+
         this.fromDate = fromDate;
         this.workDescripton = workDescripton;
         this.role = role;

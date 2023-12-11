@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>form ADD EX</h1>
+    <form th:action="@{/showFormAdd/add}" th:object="${exADD}" method="post">
+      <label>companny</label>
+       <input th:field="*{compannyName}"> <br>
+
+      <label>from_date</label>
+      <input type="date" th:field="*{fromDate}"> <br>
+
+      <label>toDate</label>
+      <input type="date"  th:field="*{toDate}"> <br>
+
+
+      <label>role:</label>
+
+      <select th:field="*{role}">
+        <option th:each="role :${roleList}"  th:value="${role}" th:text="${role}" >
+        </option>
+      </select><br>
+
+      <label>workDescripton</label>
+      <input th:field="*{workDescripton}"> <br>
+
+      <label>can_id:</label>
+      <select th:field="*{candidate}">
+        <option th:each="can :${candidateList}"  th:value="${can.id}" th:text="${can.id}" >
+        </option>
+      </select><br>
+
+    <button type="submit"> Add</button>
+
+    </form>
+</body>
+</html>

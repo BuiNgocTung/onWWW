@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> List candidate </h1>
+<a href="/candidates/showformAdd">Add </a>
+<table border="1" width="30%">
+    <tr>
+        <th>ID </th>
+        <th>fullName </th>
+        <th>email </th>
+        <th>phone </th>
+        <th>Action </th>
+        <th>Action </th>
+
+    </tr>
+    <tr th:each="candidate : ${candidatePage}">
+        <td th:text="${candidate.id}"></td>
+        <td th:text="${candidate.fullName}"></td>
+        <td th:text="${candidate.email}"></td>
+        <td th:text="${candidate.phone}"></td>
+        <td> <a th:href="@{/candidate/update/{id} (id=${candidate.id})}">Update</a> </td>
+        <td> <a th:href="@{/candidate/delete/{id} (id=${candidate.id})}">Delete</a> </td>
+    </tr>
+</table>
+</body>
+</html>
