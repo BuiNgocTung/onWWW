@@ -8,10 +8,7 @@ import com.example.repositories.ExperienceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -70,5 +67,18 @@ public class ExperienceController {
             experienceRepository.save(experience);
         }
         return "redirect:/experiences";
+    }
+
+    @GetMapping("/getCandidatesByExperienceRole")
+    public String getCandidatesByExperienceRole(@RequestParam("role") String role, Model model) {
+        Roles selectedRole = Roles.valueOf(role);
+
+        // Lấy danh sách candidate dựa trên role từ repository
+        List<Experience> experiences = experienceRepository.findExperienceByRole(selectedRole);
+
+        // Đưa danh sách candidate vào Model để gửi về view template
+        model.addAttribute("experienceByRole", experiences);
+
+        return "roles/listCandidateByRoles"; // Trả về view template để hiển thị danh sách candidate
     }
 }

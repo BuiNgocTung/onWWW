@@ -63,18 +63,18 @@ public class CandidateController {
         return "roles/list";
     }
  //list cadidate làm role (ứng với role thì sẽ có list cadidate tương ứng)
-    @GetMapping("/getCandidatesByExperienceRole")
-    public String getCandidatesByExperienceRole(@RequestParam("role") String role, Model model) {
-        Roles selectedRole = Roles.valueOf(role);
-
-        // Lấy danh sách candidate dựa trên role từ repository
-        List<Candidate> candidates = candidateRepository.findCandidatesByExperienceRole(selectedRole);
-
-        // Đưa danh sách candidate vào Model để gửi về view template
-        model.addAttribute("candidatesRole", candidates);
-
-        return "roles/listCandidateByRoles"; // Trả về view template để hiển thị danh sách candidate
-    }
+//    @GetMapping("/getCandidatesByExperienceRole")
+//    public String getCandidatesByExperienceRole(@RequestParam("role") String role, Model model) {
+//        Roles selectedRole = Roles.valueOf(role);
+//
+//        // Lấy danh sách candidate dựa trên role từ repository
+//        List<Candidate> candidates = candidateRepository.findCandidatesByExperienceRole(selectedRole);
+//
+//        // Đưa danh sách candidate vào Model để gửi về view template
+//        model.addAttribute("candidatesRole", candidates);
+//
+//        return "roles/listCandidateByRoles"; // Trả về view template để hiển thị danh sách candidate
+//    }
 
 
     ///add

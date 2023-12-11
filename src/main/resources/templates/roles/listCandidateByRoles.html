@@ -15,11 +15,11 @@
 
     <th>phone </th>
   </tr>
-  <tr th:each="candidate : ${candidatesRole}">
-    <td th:text="${candidate.id}"></td>
-    <td th:text="${candidate.fullName}"></td>
-    <td th:text="${candidate.email}"></td>
-    <td th:text="${candidate.phone}"></td>
+  <tr th:each="ex : ${experienceByRole}">
+    <td th:text="${ex.candidate.id}"></td>
+    <td th:text="${ex.candidate.fullName}"></td>
+    <td th:text="${ex.candidate.email}"></td>
+    <td th:text="${ex.candidate.phone}"></td>
   </tr>
 </table>
 </body>
